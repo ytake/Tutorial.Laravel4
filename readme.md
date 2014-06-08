@@ -1,6 +1,6 @@
 ## Tutorial Application
 ###for Laravel4.2
-Laravle4のチュートリアルアプリケーションサンプルです。  
+Laravel4のチュートリアルアプリケーションサンプルです。  
 簡易的な管理機能のついたブログ投稿アプリケーションです。  
 app/App配下をPSR-4としていますので、dump-autoloadは不要です。  
 
