@@ -24,6 +24,7 @@ class TestCase extends BaseTest
      */
     protected function prepareForTests()
     {
+        \Artisan::call("migrate:reset");
         \Artisan::call('migrate');
         \Artisan::call('db:seed');
     }
