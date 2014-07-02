@@ -22,7 +22,7 @@ databaseはsqliteを使用しているため、お手元で動作確認が可能
 **/[GET]** ホーム  
 **/managed/login[GET]** 管理画面ログイン  
 **/managed/logout[GET]** 管理画面ログアウト  
-**managed/[GET]** 管理画面ホーム
+**managed/[GET]** 管理画面ホーム  
 **managed/article[GET]** 管理画面ブログ記事一覧  
 
 詳細については、  
