@@ -23,7 +23,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'homestead',
+            'database'  => 'laravel_sample',
             'username'  => 'homestead',
             'password'  => 'secret',
             'charset'   => 'utf8',

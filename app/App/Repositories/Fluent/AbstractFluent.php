@@ -31,7 +31,7 @@ abstract class AbstractFluent implements FluentInterface
     {
         $attributes['created_at'] = Carbon::now()->toDateTimeString();
         $attributes['updated_at'] = Carbon::now()->toDateTimeString();
-        return \DB::connection('sqlite')->table($this->table)->insertGetId($attributes);
+        return \DB::connection()->table($this->table)->insertGetId($attributes);
     }
 
     /**
@@ -41,7 +41,7 @@ abstract class AbstractFluent implements FluentInterface
      */
     public function all(array $columns = ['*'])
     {
-        return \DB::connection('sqlite')->table($this->table)->get($columns);
+        return \DB::connection()->table($this->table)->get($columns);
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class AbstractFluent implements FluentInterface
      */
     public function find($id, array $columns = ['*'])
     {
-        return \DB::connection('sqlite')->table($this->table)
+        return \DB::connection()->table($this->table)
             ->where($this->primary, $id)
             ->remember(120, $this->cacheKey . $id)->first($columns);
     }
@@ -65,7 +65,7 @@ abstract class AbstractFluent implements FluentInterface
     {
         // cache forget
         \Cache::forget($this->cacheKey . $id);
-        return \DB::connection('sqlite')->table($this->table)
+        return \DB::connection()->table($this->table)
             ->where($this->primary, $id)->delete();
     }
 
@@ -79,7 +79,7 @@ abstract class AbstractFluent implements FluentInterface
         $attributes['updated_at'] = Carbon::now()->toDateTimeString();
         // cache forget
         \Cache::forget($this->cacheKey . $id);
-        return \DB::connection('sqlite')->table($this->table)
+        return \DB::connection()->table($this->table)
             ->where($this->primary, $id)->update($attributes);
     }
 
@@ -88,9 +88,9 @@ abstract class AbstractFluent implements FluentInterface
      * @param $connection specified database connection / 接続するデータベースを指定します。
      * @return \Illuminate\Database\Query\Builder
      */
-    public function getConnection($connection)
+    public function getConnection()
     {
-        return \DB::connection($connection)->table($this->table);
+        return \DB::connection()->table($this->table);
     }
 
 }

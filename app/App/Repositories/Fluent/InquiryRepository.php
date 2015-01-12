@@ -1,31 +1,31 @@
 <?php
 namespace App\Repositories\Fluent;
 
-use App\Repositories\ArticleRepositoryInterface;
+use App\Repositories\InquiryRepositoryInterface;
 
 /**
- * Class ArticleRepository
+ * Class InquiryRepository
  * @package App\Repositories\Fluent
  * @author yuuki.takezawa<yuuki.takezawa@comnect.jp.net>
  */
-class ArticleRepository extends AbstractFluent implements ArticleRepositoryInterface
+class InquiryRepository extends AbstractFluent implements InquiryRepositoryInterface
 {
     // validator rule
-    use \App\Validators\Rule;
+    use \App\Validators\InquiryRule;
 
     /** @var string  */
-    protected $cacheKey = "article:";
+    protected $cacheKey = "inquiry:";
 
     /** @var string */
-    protected $table = 'articles';
+    protected $table = 'inquirys';
 
     /** @var  */
-    protected $primary = 'article_id';
+    protected $primary = 'inquiry_id';
 
     /**
      * @return mixed|\stdClass
      */
-    public function getArticleAll()
+    public function getInquiryAll()
     {
         return $this->all();
     }
@@ -34,7 +34,7 @@ class ArticleRepository extends AbstractFluent implements ArticleRepositoryInter
      * @param $id
      * @return \stdClass
      */
-    public function getArticle($id)
+    public function getInquiry($id)
     {
         return $this->find($id);
     }
@@ -43,7 +43,7 @@ class ArticleRepository extends AbstractFluent implements ArticleRepositoryInter
      * @param array $attributes
      * @return mixed
      */
-    public function addArticle(array $attributes)
+    public function addInquiry(array $attributes)
     {
         return $this->add($attributes);
     }
@@ -52,7 +52,7 @@ class ArticleRepository extends AbstractFluent implements ArticleRepositoryInter
      * @param int $perPage
      * @return \Illuminate\Pagination\Paginator
      */
-    public function getArticlePaginate($perPage = 20)
+    public function getInquiryPaginate($perPage = 20)
     {
         return $this->getConnection()->paginate($perPage);
     }
@@ -62,7 +62,7 @@ class ArticleRepository extends AbstractFluent implements ArticleRepositoryInter
      * @param array $attributes
      * @return int
      */
-    public function updateArticle($id, array $attributes)
+    public function updateInquiry($id, array $attributes)
     {
         return $this->update($id, $attributes);
     }
@@ -71,7 +71,7 @@ class ArticleRepository extends AbstractFluent implements ArticleRepositoryInter
      * @param $id
      * @return int
      */
-    public function deleteArticle($id)
+    public function deleteInquiry($id)
     {
         return $this->delete($id);
     }
@@ -82,7 +82,7 @@ class ArticleRepository extends AbstractFluent implements ArticleRepositoryInter
      */
     public function validate(array $attributes)
     {
-        $validate = \Validator::make($attributes, $this->articleRule);
+        $validate = \Validator::make($attributes, $this->inquiryRule);
         if ($validate->passes()) {
             return true;
         }

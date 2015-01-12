@@ -42,9 +42,26 @@
                     'postConfirm' => 'managed.article.confirm',
                     'postApply' => 'managed.article.apply',
                 ]);
+            \Route::controller('inquiry', 'InquiryController', [
+                    'getIndex' => 'managed.inquiry.index',
+                    'getShow' => 'managed.inquiry.show',
+                ]);
 
             \Route::controller('', 'HomeController', ['getIndex' => 'managed.home']);
         });
+    });
+
+    // inquiry page お問い合わせ画面
+    \Route::group(['namespace' => 'Inquiry'], function () {
+        
+        \Route::controller('inquiry', 'InquiryController', [
+                'getIndex' => 'inquiry.form',
+                'getForm' => 'inquiry.form',
+                'postConfirm' => 'inquiry.confirm',
+                'postApply' => 'inquiry.apply',
+            ]);
+
+        \Route::controller('', 'HomeController', ['getIndex' => 'inquiry.index']);
     });
     //
     \Route::controller('/', 'HomeController', ['getIndex' => 'home.index']);

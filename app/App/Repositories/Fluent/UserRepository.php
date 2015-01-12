@@ -33,6 +33,6 @@ class UserRepository extends AbstractFluent implements UserRepositoryInterface
      */
     public function getUserFromName($userName)
     {
-        return $this->getConnection('sqlite')->where('user_name', $userName)->first();
+        return $this->getConnection()->where('user_name', $userName)->first();
     }
 }

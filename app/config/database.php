@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'sqlite',
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -55,9 +55,9 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'forge',
-            'username'  => 'forge',
-            'password'  => '',
+            'database'  => 'laravel_sample',
+            'username'  => 'homestead',
+            'password'  => 'secret',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -66,9 +66,9 @@ return [
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => 'localhost',
-            'database' => 'forge',
-            'username' => 'forge',
-            'password' => '',
+            'database' => 'laravel_sample',
+            'username' => 'homestead',
+            'password' => 'secret',
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',

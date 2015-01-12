@@ -18,6 +18,10 @@ return [
     app_path() . '/App/Controllers/Managed/HomeController.php',
     app_path() . '/App/Controllers/Managed/AuthenticateController.php',
     app_path() . '/App/Controllers/Managed/ArticleController.php',
+    app_path() . '/App/Controllers/Managed/InquiryController.php',
     app_path() . '/App/Controllers/Api/ArticleController.php',
+    app_path() . '/App/Controllers/Inquiry/InquiryController.php',
+    app_path() . '/App/Controllers/Inquiry/HomeController.php',
     app_path() . '/App/Repositories/ArticleRepositoryInterface.php',
+    app_path() . '/App/Repositories/InquiryRepositoryInterface.php',
 ];

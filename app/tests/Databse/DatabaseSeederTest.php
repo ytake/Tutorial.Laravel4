@@ -14,15 +14,15 @@ class DatabaseSeederTest extends TestCase
 
     public function testUsersAll()
     {
-        $result = \DB::connection('sqlite')->table('users')->get();
+        $result = \DB::connection()->table('users')->get();
         $this->assertEquals(1, count($result));
     }
 
     public function testGetUser()
     {
-        $userAll = \DB::connection('sqlite')->table('users')->get();
-        $result = \DB::connection('sqlite')->table('users')
+        $userAll = \DB::connection()->table('users')->get();
+        $result = \DB::connection()->table('users')
             ->where('user_id', $userAll[0]->user_id)->first();
-        $this->assertEquals('tutorial', $result->user_name);
+        $this->assertEquals('tanaka@sai-net.jp', $result->user_name);
     }
 } 

@@ -18,7 +18,7 @@ class UserTableTest extends TestCase
 
     public function testSeederData()
     {
-        $result = \DB::connection('sqlite')->table('users')->first();
+        $result = \DB::connection()->table('users')->first();
         foreach($result as $key => $val) {
             $this->assertNotNull(array_search($key, $this->databaseColumns));
         }

@@ -20,5 +20,7 @@ class ApplicationServiceProvider Extends ServiceProvider
         $this->app->bind('App\Repositories\UserRepositoryInterface', 'App\Repositories\Fluent\UserRepository');
         // ArticleRepository
         $this->app->bind('App\Repositories\ArticleRepositoryInterface', 'App\Repositories\Fluent\ArticleRepository');
+        // InquiryRepository
+        $this->app->bind('App\Repositories\InquiryRepositoryInterface', 'App\Repositories\Fluent\InquiryRepository');
     }
 } 

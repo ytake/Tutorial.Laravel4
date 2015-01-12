@@ -16,17 +16,17 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::connection('sqlite')->table('users')->delete();
+        \DB::connection()->table('users')->delete();
         // username:tutorial, password:tutorialで作成します
         // created user data username:tutorial, password:tutorial
         $params = [
-            'user_name' => 'tutorial',
-            'password' => \Hash::make('tutorial'),
+            'user_name' => 'tanaka@sai-net.jp',
+            'password' => \Hash::make('rikitakeuchi'),
             'remember_token' => '',
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ];
-        \DB::connection('sqlite')->table('users')->insert($params);
+        \DB::connection()->table('users')->insert($params);
     }
 
 }

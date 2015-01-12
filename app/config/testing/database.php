@@ -4,13 +4,13 @@ return [
 
     'fetch' => PDO::FETCH_CLASS,
 
-    'default' => 'sqlite',
+    'default' => 'mysql',
 
     'connections' => [
 
-        'sqlite' => [
-            'driver'   => 'sqlite',
-            'database' => app_path().'/tests/database/testing.sqlite',
+        'mysql' => [
+            'driver'   => 'mysql',
+            'database' => 'laravel_sample_test',
             'prefix'   => '',
         ],
     ],

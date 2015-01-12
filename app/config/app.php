@@ -78,7 +78,7 @@ return [
     |
     */
     // 配布する場合は必ずkey:generateを実行させます
-    'key' => 'generate key!',
+    'key' => 'PvJ3ZupvXkaEwOuO1KIsyBY4HxFFLVoK',
 
     'cipher' => MCRYPT_RIJNDAEL_128,
 
